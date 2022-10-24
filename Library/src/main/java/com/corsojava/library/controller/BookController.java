@@ -29,6 +29,7 @@ public class BookController {
 		try {			
 			return new ResponseEntity<Object>(bookService.create(book), HttpStatus.CREATED);
 		} catch (Exception e) {
+			e.printStackTrace();
 			return new ResponseEntity<Object>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
